@@ -46,10 +46,19 @@
     <li><del>Delete all games</del></li>    
     <li><del>Clean laptop</del></li>
     <li><del>Workout</del></li>
-    <li>Find way to pay for hosting</li>
+    <li><del>Find way to pay for hosting</del></li>
     <li><del>Cut hair</del></li>
-    <li>Learn Svelte</li>
+    <li><del>Learn Svelte</del></li>
     <li>Create +2 lessons for UkrGe</li>
 </ul>
 {/if}
 
+{#if date_str === "18/3/2023"}
+<h2>Today`s task-list</h2>
+<ul>
+    <li>Learn Svelte</li>
+    <li>To pay for hosting</li>
+    <li>Create +2 lessons for UkrGe</li>
+    <li>See information about Alberta</li>
+</ul>
+{/if}
