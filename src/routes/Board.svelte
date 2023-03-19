@@ -47,7 +47,7 @@
         {/each}
     </div>
     <div class="board_type">
-        <h3>Investing</h3>
+        <h3>Money</h3>
         {#each money as task}
             <Card {task}/>
         {/each}

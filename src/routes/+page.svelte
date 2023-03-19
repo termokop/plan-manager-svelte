@@ -16,47 +16,47 @@
 
     // task object
     ////////////////////// here will be fetch to get tasks what is not done (from server for this month)
-    // server side will not send tasks with wrong month
+    // server side will not send tasks with wrong
     let tasks = [
         {
         title: "Title of Task 1",
         description: "Here will be detalis about this task and other information",
-        date: "20/3/2023",
+        date: "2023-03-14",
         finished: false,
         type: "money"
         },
         {
         title: "Fly in Canada",
         description: "Here will be detalis about this task and other information",
-        date: "21/3/2023",
+        date: "2023-03-14",
         finished: false,
         type: "family"
         },
         {
         title: "Title of Task 1",
         description: "Here will be detalis about this task and other information",
-        date: "20/3/2023",
+        date: "2023-03-14",
         finished: false,
         type: "work"
         },
         {
         title: "Title of Task 1",
         description: "Here will be detalis about this task and other information",
-        date: "20/3/2023",
+        date: "2023-03-14",
         finished: false,
         type: "community"
         },
         {
         title: "Title of Task 1",
         description: "Here will be detalis about this task and other information",
-        date: "20/3/2023",
+        date: "2023-03-14",
         finished: false,
         type: "myself"
         },
         {
         title: "Title of Task 1",
         description: "Here will be detalis about this task and other information",
-        date: "20/6/2023",
+        date: "2023-03-14",
         finished: false,
         type: "work"
         },
@@ -74,7 +74,7 @@
 <Board {tasks} />
 
 
-{#if date_str === "17/3/2023"}
+{#if date_str === "2023-03-17"}
 <h2>Today`s task-list</h2>
 <ul>
     <li><del>Delete all games</del></li>    

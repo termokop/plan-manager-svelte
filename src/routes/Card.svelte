@@ -1,7 +1,12 @@
 <script>
     import Done from "./Done.svelte";
     import Details from "./Details.svelte"
+    import CardDetalies from "./CardDetalies.svelte";
+
+
     export let task;
+
+    let modalIsOpen = true;
 
     const color = () => {
         if (task.type === "family") return "#daf202bc"
@@ -10,6 +15,11 @@
         if (task.type === "money") return "#19b50eab"
         if (task.type === "myself") return "#ea4c1ca6"
     };
+
+    function openModal() {
+        console.log(modalIsOpen)
+    modalIsOpen = true;
+    }
 </script>
 
 <div class="card" style="background-color: {color()};">
@@ -25,10 +35,7 @@
     </p>
     <div class="btn">
         
-        <button on:click={() => {
-            alert("Open modal window with detalies") 
-            ///////////////////////////////////////////////////////////////////// modal
-            }}>
+        <button on:click|stopPropagation={openModal}>
             <Details/>
         </button>
         <button on:click={() => {
@@ -37,9 +44,10 @@
             }}>
             <Done/>
         </button>
-
     </div>
 </div>
+
+<CardDetalies bind:modalIsOpen={modalIsOpen} {task}/>
 
 <style>
     * {
