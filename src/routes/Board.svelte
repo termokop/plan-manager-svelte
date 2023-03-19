@@ -1,7 +1,25 @@
 <script>
-    console.log("this is board")
-
     import Card from './Card.svelte'
+
+    export let tasks = [];
+
+    let family = []
+    let work = []
+    let community = []
+    let money = []
+    let myself = []
+
+    function sortTasks(tasks) {
+        tasks.forEach(task => {
+            if (task.type === "family") family.push(task)
+            if (task.type === "work") work.push(task)
+            if (task.type === "community") community.push(task)
+            if (task.type === "money") money.push(task)
+            if (task.type === "myself") myself.push(task)
+        })
+    }
+    sortTasks(tasks)
+    
 </script>
 
 <div class="board">
@@ -12,25 +30,33 @@
     </div>
     <div class="board_type">
         <h3>Family</h3>
-        <Card color="red"/>
+        {#each family as task}
+            <Card {task}/>
+        {/each}
     </div>
     <div class="board_type">
         <h3>Work</h3>
-        <Card color="pink"/>
+        {#each work as task}
+            <Card {task}/>
+        {/each}
     </div>
     <div class="board_type">
         <h3>Community</h3>
-        <Card color="lightblue"/>
+        {#each community as task}
+            <Card {task}/>
+        {/each}
     </div>
     <div class="board_type">
         <h3>Investing</h3>
-        <Card color="green"/>
+        {#each money as task}
+            <Card {task}/>
+        {/each}
     </div>
     <div class="board_type">
         <h3>Myself</h3>
-        <Card color="yellow"/>
-        <Card color="yellow"/>
-        <Card color="yellow"/>
+        {#each myself as task}
+            <Card {task}/>
+        {/each}
     </div>
 </div>
 
@@ -38,8 +64,10 @@
     .board {
         width: 1010px;
         margin: auto;
-        border: 1px solid black;
-        height: 300px;
+        border: 20px solid rgba(0, 0, 0, 0.315);
+        border-radius: 25px;
+        background-color: beige;
+        height: 600px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -58,6 +86,6 @@
     .board_type {
         width: 200px;
         /* height: 100%; */
-        border: 1px solid blue;
+        border: none;
     }
 </style>

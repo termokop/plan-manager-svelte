@@ -1,6 +1,8 @@
 <script>
 
     import Board from "./Board.svelte";
+    import Welcome from "./Welcome.svelte";
+    import Priorities from "./Priorities.svelte";
 
     let user_name = "Yurii"; // info about user
 
@@ -10,34 +12,66 @@
     const year = date.getFullYear()
     let date_str = `${day}/${month}/${year}`
 
+    // alert(Date.parse('2023-05-05'))
+
     // task object
-    let task = {
-        title: "Title of Task",
+    ////////////////////// here will be fetch to get tasks what is not done (from server for this month)
+    // server side will not send tasks with wrong month
+    let tasks = [
+        {
+        title: "Title of Task 1",
         description: "Here will be detalis about this task and other information",
         date: "20/3/2023",
-        finished: "",
-        type: "investing"
-    }
+        finished: false,
+        type: "money"
+        },
+        {
+        title: "Fly in Canada",
+        description: "Here will be detalis about this task and other information",
+        date: "21/3/2023",
+        finished: false,
+        type: "family"
+        },
+        {
+        title: "Title of Task 1",
+        description: "Here will be detalis about this task and other information",
+        date: "20/3/2023",
+        finished: false,
+        type: "work"
+        },
+        {
+        title: "Title of Task 1",
+        description: "Here will be detalis about this task and other information",
+        date: "20/3/2023",
+        finished: false,
+        type: "community"
+        },
+        {
+        title: "Title of Task 1",
+        description: "Here will be detalis about this task and other information",
+        date: "20/3/2023",
+        finished: false,
+        type: "myself"
+        },
+        {
+        title: "Title of Task 1",
+        description: "Here will be detalis about this task and other information",
+        date: "20/6/2023",
+        finished: false,
+        type: "work"
+        },
+    ]
 
-    let year_priorities = ["Стоїцизм", "Англійська", "Програмування"]
+    let priorities = ["Стоїцизм", "Англійська", "Програмування"]
 </script>
 
 
 
-<h1> Welcome back, {user_name}! </h1>
+<Welcome {user_name} />
 
+<Priorities {priorities} />
 
-
-
-<h2>
-    Priorities in the year    
-</h2>
-
-<ol>
-    <li>{year_priorities}</li>    
-</ol>
-
-<Board/>
+<Board {tasks} />
 
 
 {#if date_str === "17/3/2023"}
